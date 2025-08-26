@@ -1,0 +1,11 @@
+packages:
+  - packages/*
+  - src/api
+  - src/renderer
+  - src/electron
+
+ignoredBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - electron
+  - electron-winstaller
+  - esbuild
