@@ -1,5 +1,4 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:3001/api";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
 
 interface ApiResponse<T = any> {
   data: T;
@@ -81,7 +80,10 @@ export const api = new ApiClient(API_BASE_URL);
 // Health check function
 export const checkApiHealth = async (): Promise<boolean> => {
   try {
-    const response = await fetch(`${API_BASE_URL.replace("/api", "")}/health`);
+    const healthUrl = import.meta.env.VITE_API_URL
+      ? `${import.meta.env.VITE_API_URL.replace("/api", "")}/health`
+      : "/health";
+    const response = await fetch(healthUrl);
     return response.ok;
   } catch {
     return false;

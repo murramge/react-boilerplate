@@ -7,8 +7,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@shared": path.resolve(__dirname, "./packages/shared"),
+      "@": path.resolve(__dirname, "./"),
+      "@shared": path.resolve(__dirname, "../../packages/shared/src"),
+      "@ui": path.resolve(__dirname, "../../packages/ui/src"),
     },
   },
   server: {
@@ -23,7 +24,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "dist/renderer",
+    outDir: "dist",
     emptyOutDir: true,
   },
   base: "./",

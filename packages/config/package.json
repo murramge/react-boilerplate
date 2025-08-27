@@ -1,0 +1,11 @@
+{
+  "name": "@boilerplate/config",
+  "version": "1.0.0",
+  "description": "Shared configuration files",
+  "main": "index.js",
+  "files": [
+    "eslint.config.mjs",
+    "tsconfig.json",
+    "tailwind.config.js"
+  ]
+}
